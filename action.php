@@ -160,7 +160,7 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 							<div class='col-md-2 col-sm-2'><img src='product_images/$pro_image' width='50px' height='60'></div>
 							<div class='col-md-2 col-sm-2'>$pro_name</div>
 							<div class='col-md-2 col-sm-2'><input type='text' class='form-control qty' pid='$pro_id' id='qty-$pro_id' value='$qty' name='$qty'></div>
-							<div class='col-md-2 col-sm-2'><input type='text' class='form-control price' pid='$pro_id' id='price-$pro_id' value='$pro_price' name='$price' disabled></div>
+							<div class='col-md-2 col-sm-2'><input type='text' class='form-control price' pid='$pro_id' id='price-$pro_id' value='$pro_price' name='$pro_price' disabled></div>
 							<div class='col-md-2 col-sm-2'><input type='text' class='form-control total' pid='$pro_id' id='total-$pro_id' value='$total_amount' name='$total_amount' disabled></div>
 						</div>
 				";
@@ -201,6 +201,8 @@ if(isset($_POST["removeFromCart"])){
 		";
 	}
 }
+
+
 
 if(isset($_POST["updateProduct"])){
 	$uid = $_SESSION["name"];

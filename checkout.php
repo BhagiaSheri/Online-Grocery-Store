@@ -4,6 +4,12 @@ include 'db.php';
 /*if(!isset($_SESSION["name"])){
 	header("location:index.php");
 }*/
+
+// current date & time
+date_default_timezone_set('Asia/Karachi');
+$identificationCode =date('mdYHisu',time());
+echo $identificationCode;
+
 $username=$_GET['name'];
 $sql="SELECT * FROM cart WHERE username='$username'";
 $run_query=mysqli_query($con,$sql);
@@ -15,12 +21,13 @@ if(mysqli_num_rows($run_query) > 0){
 		}
 }
 $date1=date("Y/m/d");
-$sql1="INSERT INTO orders(username,total_amount,order_date) VALUES('$username','$total_amount','$date1')";
+$sql1="INSERT INTO orders(username,total_amount,order_date, identification_code) VALUES('$username','$total_amount','$date1', $identificationCode)";
 $run_query1=mysqli_query($con,$sql1);
-$max="SELECT max(order_id) from orders where username='$username'";
+$max="SELECT max(order_id), max(identification_code) from orders where username='$username'";
 $result=mysqli_query($con,$max);
 $row = mysqli_fetch_row($result);
 $order_id=$row[0];
+$unique_code = $row[1];
 $sql2="SELECT * from cart where username='$username'";
 $run_query2=mysqli_query($con,$sql2);
 if(mysqli_num_rows($run_query2) > 0){
@@ -121,7 +128,7 @@ $run_query5= mysqli_query($con,$sql5);
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<div class="panel panel-primary">
-					<div class="panel-heading">Your order no. <?php echo $order_id ?> is placed</div>
+					<div class="panel-heading">Your order no. <?php echo $order_id ?> is placed and identification code is: <?php echo $unique_code ?></div>
 					<div class="panel-body">
 						<div class="row">
 						<a href="profile.php">Continue Shopping
