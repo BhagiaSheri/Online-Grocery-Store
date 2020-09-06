@@ -6,7 +6,7 @@ if(isset($_POST["category"])){
 	$run_query = mysqli_query($con,$category_query) or die(mysqli_error($con));
 	echo "
 		<div class='nav nav-pills nav-stacked'>
-			<li class='active'><a href='#'><h4>Categories</h4></a></li>
+			<li class='btn-success'><a href='#'><h4 style='color: white;'>Categories</h4></a></li>
 	";
 	if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
@@ -24,7 +24,7 @@ if(isset($_POST["brand"])){
 	$run_query = mysqli_query($con,$brand_query);
 	echo "
 		<div class='nav nav-pills nav-stacked'>
-			<li class='active'><a href='#'><h4>Brands</h4></a></li>
+			<li class='btn-success'><a href='#'><h4 style='color: white;'>Brands</h4></a></li>
 	";
 	if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
@@ -68,13 +68,13 @@ if(isset($_POST["getProduct"])){
 			$pro_image = $row['product_img'];
 			echo "
 				<div class='col-md-4'>
-							<div class='panel panel-info'>
+							<div class='panel panel-success'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
 								</div>
 								<div class='panel-heading'>$.$pro_price.00";
-									echo '<a style="float:right" class="user-cart" href="user-cart.php?id='.$row['product_id'].'">Add to cart</a>';
+									echo '<a style="float:right; padding: 5px;" class="btn-success user-cart" href="user-cart.php?id='.$row['product_id'].'">Add to cart</a>';
 					echo "	</div>
 							</div>
 						</div>	
@@ -104,7 +104,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			$pro_image = $row['product_img'];
 			echo "
 				<div class='col-md-4'>
-							<div class='panel panel-info'>
+							<div class='panel panel-success'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
 									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
@@ -153,8 +153,8 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 					<div class='row'>
 							<div class='col-md-2 col-sm-2'>
 								<div class='btn-group'>
-									<a href='#' remove_id='$pro_id' class='btn btn-danger btn-xs remove'><span class='glyphicon glyphicon-trash'></span></a>
-									<a href='' update_id='$pro_id' class='btn btn-primary btn-xs update'><span class='glyphicon glyphicon-ok-sign'></span></a>
+									<a href='#' remove_id='$pro_id' class='btn btn-danger btn-xs remove'><i class='fa fa-trash' aria-hidden='true'></i></a>
+									<a href='' update_id='$pro_id' class='btn btn-primary btn-xs update'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
 								</div>
 							</div>
 							<div class='col-md-2 col-sm-2'><img src='product_images/$pro_image' width='50px' height='60'></div>

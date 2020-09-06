@@ -5,8 +5,10 @@ session_start();
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ARPA GROCERY STORE</title>
+<title>Victual Boutique</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Place your fontawesome kit's code here -->
+<script src="https://kit.fontawesome.com/9e2173a16a.js" crossorigin="anonymous"></script>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="loginvalidate1.js"></script>
@@ -16,23 +18,23 @@ h2{
 }
 </style>
 </head>
-<body>
+<body class="bg-success">
 <div class="navbar navbar-inverse navbar-fixed-top">
 <div class="container-fluid">
 <div class="navbar-header">
-<a href="#" class="navbar-brand">ARPA GROCERY STORE</a>
+<a href="#" class="navbar-brand">Victual Boutique</a>
 </div>
 <ul class="nav navbar-nav">
-<li><a href="adminfinal.php"><span class="glyphicon glyphicon-home"></span>HOME</a></li>
-<li><a href="adminfinal.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
+<li><a href="adminfinal.php"><span class="fa fa-home"></span> HOME</a></li>
+<li><a href="adminfinal.php"><span class="fa fa-product-hunt"></span> Product</a></li>
 
 </ul>
 <ul class="nav navbar-nav navbar-right">
 
-<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><?php echo $_SESSION['name']; ?></a>
+<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-user"></span> <?php echo $_SESSION['name']; ?></a>
     <ul class="dropdown-menu">
 	  <li class="divider"></li>
-       <li><a href="logout.php" style="text-decoration:none; color:blue;">Logout</a></li>
+       <li><a class="btn btn-success" href="logout.php" style="text-decoration:none; color:white;">Logout</a></li>
     </ul>
 </li>
 
@@ -116,7 +118,7 @@ h2{
 	  </div>
 	  <div class="form-group">
       <div class="col-sm-offset-3 col-sm-9">
-        <input type="Submit" value="Submit">
+        <input class="btn btn-success" type="Submit" value="Submit">
       </div>
     </div>
 
