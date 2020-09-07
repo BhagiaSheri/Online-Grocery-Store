@@ -83,14 +83,14 @@ session_start();
             <div class="form-group">
               <label class="control-label col-sm-3" for="title">Product Title:</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="title" name="title" value="<?php echo $title; ?>">
+                <input type="text" class="form-control" id="title" name="title" required value="<?php echo $title; ?>">
               </div>
             </div>
 
             <div class="form-group">
               <label class="control-label col-sm-3" for="price">Product Price:</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="price" name="price" value="<?php echo $price; ?>">
+                <input type="text" class="form-control" id="price" name="price" required value="<?php echo $price; ?>">
               </div>
             </div>
             <div class="form-group">
@@ -132,7 +132,7 @@ session_start();
             <div class="form-group">
               <label class="control-label col-sm-3" for="quantity">Product quantity:</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity; ?>">
+                <input type="text" class="form-control" name="quantity" id="quantity" required value="<?php echo $quantity; ?>">
               </div>
             </div>
             <div class="form-group">

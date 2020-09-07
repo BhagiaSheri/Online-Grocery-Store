@@ -1,9 +1,9 @@
 <?php
 session_start();
 include 'db.php';
-/*if(!isset($_SESSION["name"])){
+if(!isset($_SESSION["name"])){
 	header("location:index.php");
-}*/
+}
 
 // current date & time
 date_default_timezone_set('Asia/Karachi');
